@@ -1,0 +1,12 @@
+<Sales>
+  <Order total="89.94999999999999">
+    <OrderItem quantity="5" price="17.99">C001</OrderItem>
+  </Order>
+  <Order total="55.5">
+    <OrderItem quantity="2" price="18.75">C002</OrderItem>
+    <OrderItem quantity="2" price="9.0">A001</OrderItem>
+  </Order>
+  <Order total="200.0">
+    <OrderItem quantity="1" price="200.0">B002</OrderItem>
+  </Order>
+</Sales>

@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <center><h2>Orders</h2></center>
+    <hr>
+    <h4>Total = 89.94999999999999</h4>
+      <p>
+        <b>code:</b> C001<br>
+        <b>quantity:</b> 5<br>
+        <b>price:</b> 17.99
+      </p>
+    <hr>
+    <h4>Total = 55.5</h4>
+      <p>
+        <b>code:</b> C002<br>
+        <b>quantity:</b> 2<br>
+        <b>price:</b> 18.75
+      </p>
+      <p>
+        <b>code:</b> A001<br>
+        <b>quantity:</b> 2<br>
+        <b>price:</b> 9.0
+      </p>
+    <hr>
+    <h4>Total = 200.0</h4>
+      <p>
+        <b>code:</b> B002<br>
+        <b>quantity:</b> 1<br>
+        <b>price:</b> 200.0
+      </p>
+  </body>
+</html>
