@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.collections.FXCollections?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="797.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController" stylesheets="@BackGround.css">
+  <tabs>
+    <Tab text="医疗报销系统">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane prefHeight="505.0" prefWidth="778.0">
+                     <left>
+                        <TableView fx:id="ReTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="ReTableID" prefWidth="97.00003051757812" text="人员ID" />
+                              <TableColumn fx:id="ReTableName" prefWidth="101.99996948242188" text="患者姓名" />
+                           </columns>
+                        </TableView>
+                     </left>
+                     <right>
+                        <FlowPane prefHeight="390.0" prefWidth="179.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <AnchorPane prefHeight="154.0" prefWidth="211.0">
+                                 <children>
+                                    <Button fx:id="ReDaochu" layoutX="18.0" layoutY="36.0" mnemonicParsing="false" onAction="#onYuJIE" prefHeight="23.0" prefWidth="78.0" text="导出到txt" />
+                                    <Text layoutX="15.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="状态：" wrappingWidth="137.0" />
+                                    <TextField fx:id="ReState" layoutX="15.0" layoutY="89.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </FlowPane>
+                     </right>
+                     <top>
+                        <HBox prefHeight="26.0" prefWidth="778.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TextField fx:id="ReFind" prefHeight="23.0" prefWidth="197.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="结果：" wrappingWidth="53.240234375">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                           </children></HBox>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TextArea fx:id="res" layoutY="-2.0" prefHeight="492.0" prefWidth="368.0" />
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="基础信息维护系统">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane layoutX="123.0" layoutY="37.0" prefHeight="371.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="人员基本信息维护">
+                           <content>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <left>
+                                    <TableView fx:id="PersonTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="PersonIDColumn" prefWidth="95.33331298828125" text="人员ID" />
+                                        <TableColumn fx:id="PersonNameColum" prefWidth="106.66668701171875" text="人员姓名" />
+                                      </columns>
+                                    </TableView>
+                                 </left>
+                                 <top>
+                                    <AnchorPane prefHeight="26.0" prefWidth="778.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox prefHeight="23.0" prefWidth="903.0">
+                                             <children>
+                                                <TextField fx:id="PersonFindField" prefHeight="23.0" prefWidth="210.0" />
+                                                <Button fx:id="PIDelete" mnemonicParsing="false" onAction="#onPIDelete" prefHeight="23.0" prefWidth="73.0" text="删除" />
+                                                <Button fx:id="PIAdd" mnemonicParsing="false" onAction="#onPIAdd" prefHeight="23.0" prefWidth="74.0" text="增加" />
+                                                <Button fx:id="PIChange" mnemonicParsing="false" onAction="#onPIChange" prefHeight="23.0" prefWidth="70.0" text="修改" />
+                                                <Button fx:id="PIDaoChu" mnemonicParsing="false" onAction="#onDaochu" prefHeight="23.0" prefWidth="88.0" text="导出为txt" />
+                                                <Label prefHeight="23.0" prefWidth="40.0" text="状态：" />
+                                                <TextField fx:id="PersonDaochuState" prefHeight="23.0" prefWidth="182.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </top>
+                                 <center>
+                                    <AnchorPane fx:id="Drug" prefHeight="502.0" prefWidth="692.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <GridPane layoutX="111.0" layoutY="6.0" prefHeight="432.0" prefWidth="269.0">
+                                             <children>
+                                                <Label prefHeight="15.0" prefWidth="143.0" text="人员ID:" />
+                                                <Label prefHeight="15.0" prefWidth="131.0" text="证件类型:" GridPane.rowIndex="1" />
+                                                <Label prefHeight="15.0" prefWidth="162.0" text="证件编号:" GridPane.rowIndex="2" />
+                                                <Label prefHeight="15.0" prefWidth="217.0" text="姓名:" GridPane.rowIndex="3" />
+                                                <Label prefHeight="15.0" prefWidth="140.0" text="性别:" GridPane.rowIndex="4" />
+                                                <Label prefHeight="15.0" prefWidth="190.0" text="民族:" GridPane.rowIndex="5" />
+                                                <Label prefHeight="15.0" prefWidth="165.0" text="出生日期:" GridPane.rowIndex="6" />
+                                                <Label prefHeight="15.0" prefWidth="185.0" text="医疗人员类别:" GridPane.rowIndex="7" />
+                                                <Label GridPane.columnIndex="1" />
+                                                <TextField fx:id="PersonID" prefHeight="23.0" prefWidth="424.0" GridPane.columnIndex="1" />
+                                                <TextField fx:id="IDNumber" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="Nationality" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <ComboBox fx:id="MedicalPersonKind" prefHeight="23.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <ComboBox fx:id="IDtype" prefHeight="23.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <ComboBox fx:id="Gender" prefHeight="23.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <DatePicker fx:id="BirthDay" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="93.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="460.0" minWidth="10.0" prefWidth="176.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </content>
+                        </Tab>
+                        <Tab text="药品基本信息维护">
+                           <content>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <left>
+                                    <TableView fx:id="DrugTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <columns>
+                                          <TableColumn fx:id="TableDrugCode" prefWidth="95.33331298828125" text="药品编码" />
+                                          <TableColumn fx:id="TableDrugName" prefWidth="106.66668701171875" text="药品名称" />
+                                       </columns>
+                                    </TableView>
+                                 </left>
+                                 <top>
+                                    <AnchorPane prefHeight="22.0" prefWidth="903.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox prefHeight="23.0" prefWidth="903.0">
+                                             <children>
+                                                <TextField fx:id="DrugFindField" prefHeight="23.0" prefWidth="210.0" />
+                                                <Button fx:id="MIDelete" mnemonicParsing="false" onAction="#onMIDelete" prefHeight="23.0" prefWidth="73.0" text="删除" />
+                                                <Button fx:id="MIAdd" mnemonicParsing="false" onAction="#onMIAdd" prefHeight="23.0" prefWidth="74.0" text="增加" />
+                                                <Button fx:id="MIChange" mnemonicParsing="false" onAction="#onMIChange" prefHeight="23.0" prefWidth="70.0" text="修改" />
+                                                <Button fx:id="MIDaochu" mnemonicParsing="false" onAction="#onMIDaochu" prefHeight="23.0" prefWidth="88.0" text="导出为txt" />
+                                                <Label prefHeight="23.0" prefWidth="66.0" text="导出状态：" />
+                                                <TextField fx:id="DrugState" prefHeight="23.0" prefWidth="182.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </top>
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <GridPane layoutX="120.0" layoutY="14.0" prefHeight="405.0" prefWidth="288.0">
+                                             <children>
+                                                <Label prefHeight="15.0" prefWidth="134.0" text="药品编码:" />
+                                                <Label prefHeight="15.0" prefWidth="193.0" text="药品名称:" GridPane.rowIndex="1" />
+                                                <Label prefHeight="15.0" prefWidth="167.0" text="最高限价:" GridPane.rowIndex="2" />
+                                                <Label prefHeight="15.0" prefWidth="222.0" text="药品剂量单位:" GridPane.rowIndex="3" />
+                                                <Label prefHeight="15.0" prefWidth="174.0" text="收费项目等级:" GridPane.rowIndex="4" />
+                                                <Label prefHeight="15.0" prefWidth="218.0" text="医院等级:" GridPane.rowIndex="5" />
+                                                <Label text="Label" GridPane.columnIndex="1" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <TextField fx:id="DrugID" GridPane.columnIndex="1" />
+                                                <TextField fx:id="DrugName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="DrugPrice" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <ComboBox fx:id="DrugUnit" prefHeight="23.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <ComboBox fx:id="DrugHospitalGrade" prefHeight="23.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <ComboBox fx:id="ChargeGrade" prefHeight="23.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="91.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="197.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </content>
+                        </Tab>
+                        <Tab text="人员就诊信息维护">
+                           <content>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <left>
+                                    <TableView fx:id="PMITable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <columns>
+                                          <TableColumn fx:id="TablePMIID" prefWidth="199.0" text="人员ID" />
+                                       </columns>
+                                    </TableView>
+                                 </left>
+                                 <top>
+                                    <AnchorPane prefHeight="12.0" prefWidth="903.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <AnchorPane prefHeight="22.0" prefWidth="903.0">
+                                             <children>
+                                                <HBox prefHeight="23.0" prefWidth="903.0">
+                                                   <children>
+                                                      <TextField fx:id="PMIFInd" prefHeight="23.0" prefWidth="210.0" />
+                                                      <Button fx:id="PMIDelete" mnemonicParsing="false" onAction="#onPMIDelete" prefHeight="23.0" prefWidth="73.0" text="删除" />
+                                                      <Button fx:id="PMIAdd" mnemonicParsing="false" onAction="#onPMIAdd" prefHeight="23.0" prefWidth="74.0" text="增加" />
+                                                      <Button fx:id="PMIChange" mnemonicParsing="false" onAction="#onPMIChange" prefHeight="23.0" prefWidth="70.0" text="修改" />
+                                                      <Button fx:id="PMIDaochu" mnemonicParsing="false" onAction="#onPMIDAochu" prefHeight="23.0" prefWidth="88.0" text="导出为txt" />
+                                                      <Label prefHeight="23.0" prefWidth="73.0" text="导出状态：" />
+                                                      <TextField fx:id="PMIState" prefHeight="23.0" prefWidth="182.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </top>
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <GridPane layoutX="79.0" layoutY="27.0" prefHeight="405.0" prefWidth="390.0">
+                                             <children>
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="人员ID：" />
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="住院号（门诊号）:" GridPane.rowIndex="1" />
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="医疗类别(医院等级):" GridPane.rowIndex="2" />
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="定点医疗机构编号（医院编号）:" GridPane.rowIndex="3" />
+                                                <Label prefHeight="15.0" prefWidth="269.0" text="定点医疗机构名称（医院名称）：" GridPane.rowIndex="4" />
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="入院日期：" GridPane.rowIndex="5" />
+                                                <Label prefHeight="15.0" prefWidth="267.0" text="出院日期：" GridPane.rowIndex="6" />
+                                                <Label text="Label" GridPane.columnIndex="1" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <TextField fx:id="PMIPersonID" GridPane.columnIndex="1" />
+                                                <TextField fx:id="PMIMenzhenhao" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="PMIHospitalCode" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="PMIHospitalName" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <TextField fx:id="PMIReason" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <ComboBox fx:id="PMIHospitalGrade" prefHeight="23.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="出院原因：" GridPane.rowIndex="7" />
+                                                <DatePicker fx:id="PMIInputHospital" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <DatePicker fx:id="PMIOutputHospital" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="186.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="172.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </content>
+                        </Tab>
+                        <Tab text="处方信息维护">
+                           <content>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <top>
+                                    <AnchorPane prefHeight="0.0" prefWidth="903.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <AnchorPane prefHeight="22.0" prefWidth="903.0">
+                                             <children>
+                                                <HBox prefHeight="23.0" prefWidth="903.0">
+                                                   <children>
+                                                      <TextField fx:id="PreFind" prefHeight="23.0" prefWidth="210.0" />
+                                                      <Button fx:id="PreDelete" mnemonicParsing="false" onAction="#onPreDelete" prefHeight="23.0" prefWidth="73.0" text="删除" />
+                                                      <Button fx:id="PreAdd" mnemonicParsing="false" onAction="#onPreAdd" prefHeight="23.0" prefWidth="74.0" text="增加" />
+                                                      <Button fx:id="PreChange" mnemonicParsing="false" onAction="#onPreChange" prefHeight="23.0" prefWidth="70.0" text="修改" />
+                                                      <Button fx:id="PreDaochu" mnemonicParsing="false" onAction="#onPreDaochu" prefHeight="23.0" prefWidth="88.0" text="导出为txt" />
+                                                      <Label prefHeight="23.0" prefWidth="76.0" text="导出状态：" />
+                                                      <TextField fx:id="PreState" prefHeight="23.0" prefWidth="197.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </top>
+                                 <center>
+                                    <AnchorPane prefHeight="506.0" prefWidth="280.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <TableView fx:id="PreTable" prefHeight="247.0" prefWidth="670.0">
+                                             <columns>
+                                                <TableColumn fx:id="ZhuyuanHaoColumn" prefWidth="155.0" text="住院号(门诊号)" />
+                                                <TableColumn fx:id="PreDrugCodeColumn" prefWidth="162.0" text="项目编码(药品编码)" />
+                                                <TableColumn fx:id="PreDrugPriceColumn" prefWidth="101.0" text="单价" />
+                                                <TableColumn fx:id="PreDrugNumColumn" prefWidth="112.3333740234375" text="数量" />
+                                                <TableColumn fx:id="PreDrugSumColum" prefWidth="141.0" text="项目总金额" />
+                                             </columns>
+                                          </TableView>
+                                          <GridPane layoutX="33.0" layoutY="260.0" prefHeight="236.0" prefWidth="525.0">
+                                             <children>
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="药品编码：" />
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="单价：" GridPane.rowIndex="1" />
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="数量" GridPane.rowIndex="2" />
+                                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="PreDrugNum" prefHeight="23.0" prefWidth="334.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="PreDrugCode" GridPane.columnIndex="1" />
+                                                <TextField fx:id="PreDrugPrice" prefHeight="23.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="住院号（门诊号）：" GridPane.rowIndex="3" />
+                                                <Label prefHeight="15.0" prefWidth="268.0" text="项目总金额：" GridPane.rowIndex="4" />
+                                                <TextField fx:id="PreMenzhenhao" prefHeight="23.0" prefWidth="334.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="PreSumPrice" editable="false" prefHeight="23.0" prefWidth="334.0" promptText="不可操作..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                             </children>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="79.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="217.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

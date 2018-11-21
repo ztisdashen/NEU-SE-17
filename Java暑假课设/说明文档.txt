@@ -1,0 +1,6 @@
+BilingInfomation —— 结算信息
+HospitalInfo —— 医院信息
+MedicalInformationMaintenance——药物信息维护
+PersonalMedicalInformationMaintenance——个人诊疗信息维护
+Pre_settlementInfo —— 预结算信息
+PrescriptionDetaiMainTain——处方信息维护
